@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>即時答題小幫手</title>
+  <link rel="stylesheet" href="topic.css">
+</head>
+<body>
+
+  <div class="quiz-box">
+    <div style="margin-bottom: 10px; text-align: left; width: 100%;">
+      <label><strong>🧠 題目模式：</strong></label>
+      <select id="modeSelector" onchange="handleModeChange()">
+        <option value="normal">正常模式</option>
+        <option value="wrong">錯題模式</option>
+        <option value="starred">⭐ 收藏模式</option>
+      </select>
+    </div>
+    <div style="margin-bottom: 10px; text-align: left; width: 100%;">
+      <label><strong>📘 題庫章節：</strong></label>
+      <select id="chapterSelector" onchange="handleChapterChange()">
+        <option value="all">全部章節</option>
+      </select>
+    </div>
+    <div class="question-counter">第<span id="current">1</span>章 / <span id="total">4</span></div>
+    <h2 id="question">載入中...</h2>
+    <div class="options" id="options"></div>
+    <div class="controls">
+      <button id="favBtn">⭐ 收藏這題</button>
+      <button onclick="goToPrevQuestion()" id="prevBtn">⬅️ 上一題</button>
+      <button onclick="nextQuestion()" id="nextBtn">➡️ 下一題</button>
+    </div>
+  </div>
+  </div>
+
+  <script src="topic.js"></script>
+</body>
+</html>
